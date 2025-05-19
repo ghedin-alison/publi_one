@@ -5,4 +5,5 @@ services:
       - "8000:8000"
     environment:
       MONGO_URI: ${MONGO_URI}
-      MONGO_DB_NAME: ${MONGO_DB_NAME}
+      MONGO_DB: ${MONGO_DB_NAME}
+    command: sh -c "python load_data/main.py && python manage.py runserver 0.0.0.0:8000"
