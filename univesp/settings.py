@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'appdict.apps.AppdictConfig',
     'univesp.apps.MongoAdminConfig',
     'univesp.apps.MongoAuthConfig',
     'univesp.apps.MongoContentTypesConfig',
@@ -78,7 +79,7 @@ WSGI_APPLICATION = 'univesp.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    "default": django_mongodb_backend.parse_uri(os.getenv("MONGODB_URI")),
+    "default": django_mongodb_backend.parse_uri(os.getenv("MONGO_URI")),
 }
 
 # Password validation

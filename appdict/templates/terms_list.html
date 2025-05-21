@@ -1,0 +1,30 @@
+<!-- templates/viewers_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termos List</title>
+</head>
+<body>
+  <h1>Lista de Termos</h1>
+  <table>
+     <thead>
+           <tr>
+              <th>Termo</th>
+           </tr>
+     </thead>
+     <tbody>
+           {% for term in terms %}
+              <tr>
+                 <td>{{ term.termo }}</td>
+              </tr>
+           {% empty %}
+              <tr>
+                 <td colspan="2">Nenhum termo encontrado.</td>
+              </tr>
+           {% endfor %}
+     </tbody>
+  </table>
+</body>
+</html>
